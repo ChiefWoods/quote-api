@@ -11,7 +11,12 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/api/quote/villain', async (req, res) => {
   const villain = await getVillainQuote();
-  res.json(villain);
+  const data = {
+    name: villain.name,
+    quote: villain.quote
+  };
+  
+  res.json(data);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

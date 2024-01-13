@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node apiHandler.js"
+    "start": "node src/apiHandler.js",
+    "update": "node src/updateQuotes.js"
   },
   "author": "",
   "license": "ISC",

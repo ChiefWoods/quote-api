@@ -11,7 +11,14 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('Connected to database'))
   .catch(error => console.error(error))
 
-async function updateCollection(collectionName) {
+const schemaObj = {
+  villains: new mongoose.Schema({
+    name: { type: String, required: true },
+    quote: { type: String, required: true }
+  })
+}
+
+export async function updateCollection(collectionName) {
   const currentModulePath = new URL(import.meta.url).pathname;
   const currentDir = path.dirname(currentModulePath);
   const filePath = path.join(currentDir, `collections/${collectionName}.json`);
@@ -31,16 +38,7 @@ async function updateCollection(collectionName) {
 }
 
 export async function getVillainQuote() {
-  const model = mongoose.model('villains');
+  const model = mongoose.model('villains', schemaObj.villains);
   const villain = await model.aggregate([{ $sample: { size: 1 } }]);
   return villain[0];
 }
-
-const schemaObj = {
-  villains: new mongoose.Schema({
-    name: { type: String, required: true },
-    quote: { type: String, required: true }
-  })
-}
-
-updateCollection('villains');

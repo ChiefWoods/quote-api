@@ -2,6 +2,8 @@
 
 Quote API for [Random Quote Machine](https://github.com/ChiefWoods/random-quote-machine)
 
+[API Link](https://quote-api-u0ka.onrender.com/api/quote/villain)
+
 ## Built With
 
 ### Languages
@@ -44,6 +46,13 @@ npm install
 npm run start
 ```
 
+### Update Quotes
+
+Edit files inside of the ```/collections``` folder, then run the updateQuotes.js file.
+```
+npm run update
+```
+
 ## Issues
 
 View the [open issues](https://github.com/ChiefWoods/random-quote-machine/issues) for a full list of proposed features and known bugs.
@@ -53,6 +62,10 @@ View the [open issues](https://github.com/ChiefWoods/random-quote-machine/issues
 ### Resources
 
 - [Shields.io](https://shields.io/)
+
+### Hosting
+
+- [Render](https://render.com/)
 
 ## Contact
 
