@@ -2,7 +2,90 @@
 
 Quote API for [Random Quote Machine](https://github.com/ChiefWoods/random-quote-machine)
 
-[API Link](https://quote-api-u0ka.onrender.com)
+## Usage
+
+Base - `https://quote-api-u0ka.onrender.com`
+
+### Available Collections
+
+- villains
+- 48laws
+
+### Update Collection
+
+`PUT /api/quotes`
+
+Updates a collection if it exists, and creates one if it doesn't.
+
+#### Body Data
+
+| Key        | Type   | Description                                              |
+| ---------- | ------ | -------------------------------------------------------- |
+| name       | String | Name of collection                                       |
+| collection | File   | JSON file with a 'quotes' property of an array of quotes |
+
+#### Response
+
+```
+{
+    "success": "Collection 'villains' updated."
+}
+```
+
+### Get Random Quote
+
+`GET /api/quotes/:name/random`
+
+Gets a random quote.
+
+#### Response
+
+```
+{
+    "id": 28,
+    "name": "White Death",
+    "quote": "If you do not control your fate, it will control you."
+}
+```
+
+### Get Quote by Id
+
+`GET /api/quotes/:name/:id`
+
+Gets a quote by id.
+
+#### Response
+
+```
+{
+    "id": 1,
+    "name": "Thanos",
+    "quote": "The hardest choices require the strongest wills."
+}
+```
+
+### Get All Quotes
+
+`GET /api/quotes/:name`
+
+Gets all quotes from a collection.
+
+#### Response
+
+```
+[
+    {
+        "id": 1,
+        "name": "Thanos",
+        "quote": "The hardest choices require the strongest wills."
+    },
+    {
+        "id": 2,
+        "name": "Joker",
+        "quote": "In their last moments, people show you who they really are."
+    },
+    ...
+```
 
 ## Built With
 
@@ -54,18 +137,17 @@ git clone https://github.com/ChiefWoods/quote-api.git
 npm install
 ```
 
-3. Start Node.js server
+3. Set environment variables
+
+```
+MONGODB_URI=<YOUR MONGODB_URI HERE>
+MONGODB_DB_NAME=<NAME OF DATABASE>
+```
+
+4. Start Node.js server
 
 ```
 npm run start
-```
-
-### Update Quotes
-
-Edit files inside of the `/collections` folder, then run the updateQuotes.js file.
-
-```
-npm run update
 ```
 
 ## Issues
