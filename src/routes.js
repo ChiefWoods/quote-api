@@ -24,12 +24,14 @@ const client = await connectDatabase();
 // Updates a collection entirely, creates a new collection if it doesn't exist
 app.put("/api/quotes/", upload.single("collection"), async (req, res) => {
   try {
-    const name = req.body.name;
+    const { name, access_key: accessKey } = req.body;
 
     if (!name) {
       return res.status(400).json({ error: "Collection name is required." });
     } else if (!req.file) {
       return res.status(400).json({ error: "File is required." });
+    } else if (!accessKey || accessKey !== process.env.ACCESS_KEY) {
+      return res.status(401).json({ error: "Unauthorized access." });
     }
 
     const data = JSON.parse(req.file.buffer.toString());
