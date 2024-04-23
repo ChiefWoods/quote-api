@@ -77,11 +77,7 @@ export async function getQuoteByIndex(name, index) {
       return { error: `Id must be between 1 and ${count}.` };
     }
 
-    const quote = await collection
-      .find()
-      .skip(index - 1)
-      .limit(1)
-      .next();
+    const quote = await collection.findOne({ id: Number(index) });
 
     return quote;
   } catch (err) {
@@ -96,7 +92,7 @@ export async function getAllQuotes(name) {
     }
 
     const collection = database.collection(name);
-    const quotes = await collection.find().toArray();
+    const quotes = await collection.find().sort({ id: 1 }).toArray();
 
     return quotes;
   } catch (err) {
