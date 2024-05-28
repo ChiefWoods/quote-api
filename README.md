@@ -10,6 +10,7 @@ Base - `https://quote-api-u0ka.onrender.com`
 
 - villains
 - 48laws
+- 33strategies
 
 ### Update Collection
 

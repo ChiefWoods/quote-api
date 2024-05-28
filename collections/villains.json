@@ -184,6 +184,16 @@
       "id": 37,
       "name": "Eren Yeager",
       "quote": "You win, you live. You lose, you die. If you don't fight, you can't win."
+    },
+    {
+      "id": 38,
+      "name": "Thrawn",
+      "quote": "What was first just a dream has become a frightening reality for those who may oppose us."
+    },
+    {
+      "id": 39,
+      "name": "Baylan Skoll",
+      "quote": "It is an unfortunate evil, but speaks to a greater truth. One must destroy in order to create."
     }
   ]
 }
