@@ -1,13 +1,13 @@
-/* eslint-disable no-undef */
 import express from "express";
 import cors from "cors";
 import multer from "multer";
 import {
-  connectDatabase,
+  client,
   updateCollection,
   getRandomQuote,
   getQuoteByIndex,
   getAllQuotes,
+  getAllCollections,
 } from "./database.js";
 
 const port = 8000;
@@ -19,18 +19,44 @@ app.use(express.urlencoded({ extended: true }));
 
 const upload = multer({ storage: multer.memoryStorage() });
 
-const client = await connectDatabase();
+// Retrieves all collections
+app.get("/api/collections/", async (req, res) => {
+  try {
+    const collections = await getAllCollections();
+
+    res.json(collections);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Failed to retrieve collections." });
+  }
+});
 
 // Updates a collection entirely, creates a new collection if it doesn't exist
-app.put("/api/quotes/", upload.single("collection"), async (req, res) => {
+app.put("/api/collections/", upload.single("collection"), async (req, res) => {
   try {
-    const { name, access_key: accessKey } = req.body;
+    const { name } = req.body;
+    const authHeader = req.headers.authorization;
 
     if (!name) {
       return res.status(400).json({ error: "Collection name is required." });
     } else if (!req.file) {
       return res.status(400).json({ error: "File is required." });
-    } else if (!accessKey || accessKey !== process.env.ACCESS_KEY) {
+    } else if (!authHeader) {
+      return res
+        .status(401)
+        .json({ error: "Authorization header is missing." });
+    }
+
+    const [username, password] = Buffer.from(authHeader.split(" ")[1], "base64")
+      .toString()
+      .split(":");
+
+    if (
+      !username ||
+      !password ||
+      username !== process.env.AUTH_USERNAME ||
+      password !== process.env.AUTH_PASSWORD
+    ) {
       return res.status(401).json({ error: "Unauthorized access." });
     }
 
@@ -50,23 +76,44 @@ app.put("/api/quotes/", upload.single("collection"), async (req, res) => {
   }
 });
 
-// Retrieve a random quote from a collection
-app.get("/api/quotes/:name/random", async (req, res) => {
+// Retrieve all quotes from a collection
+app.get("/api/quotes/:collection", async (req, res) => {
   try {
-    const { name } = req.params;
+    const { collection } = req.params;
 
-    if (name === ":name") {
+    if (collection === ":collection") {
       return res.status(400).json({ error: "Collection name is required." });
     }
 
-    const quote = await getRandomQuote(name);
+    const quotes = await getAllQuotes(collection);
+
+    if (quotes) {
+      console.log(`Retrieved ${quotes.length} quotes`);
+    }
+
+    res.json(quotes);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Failed to retrieve quotes." });
+  }
+});
+
+// Retrieve a random quote from a collection
+app.get("/api/quotes/:collection/random", async (req, res) => {
+  try {
+    const { collection } = req.params;
+
+    if (collection === ":collection") {
+      return res.status(400).json({ error: "Collection name is required." });
+    }
+
+    const quote = await getRandomQuote(collection);
 
     if (quote.error) {
       return res.status(404).json(quote);
     }
 
     console.log(`Retrieved quote: ${quote._id}`);
-    delete quote._id;
 
     res.json(quote);
   } catch (err) {
@@ -76,55 +123,28 @@ app.get("/api/quotes/:name/random", async (req, res) => {
 });
 
 // Retrieve a quote by id from a collection
-app.get("/api/quotes/:name/:id", async (req, res) => {
+app.get("/api/quotes/:collection/:id", async (req, res) => {
   try {
-    const { name, id } = req.params;
+    const { collection, id } = req.params;
 
-    if (name === ":name") {
+    if (collection === ":collection") {
       return res.status(400).json({ error: "Collection name is required." });
-    }
-
-    if (id === ":id") {
+    } else if (id === ":id") {
       return res.status(400).json({ error: "Quote id is required." });
     }
 
-    const quote = await getQuoteByIndex(name, id);
+    const quote = await getQuoteByIndex(collection, id);
 
     if (quote.error) {
       return res.status(404).json(quote);
     }
 
     console.log(`Retrieved quote: ${quote._id}`);
-    delete quote._id;
 
     res.json(quote);
   } catch (err) {
     console.log(err);
     res.status(500).json({ error: "Failed to retrieve quote." });
-  }
-});
-
-// Retrieve all quotes from a collection
-app.get("/api/quotes/:name", async (req, res) => {
-  try {
-    const { name } = req.params;
-
-    if (name === ":name") {
-      return res.status(400).json({ error: "Collection name is required." });
-    }
-
-    const quotes = await getAllQuotes(name);
-
-    if (quotes) {
-      console.log(`Retrieved ${quotes.length} quotes`);
-    }
-
-    quotes.filter((quote) => delete quote._id);
-
-    res.json(quotes);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: "Failed to retrieve quotes." });
   }
 });
 

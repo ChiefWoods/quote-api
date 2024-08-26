@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import dns from "dns";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
@@ -6,25 +5,23 @@ dotenv.config();
 
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
-let client;
+export let client;
 let database;
 
-export async function connectDatabase() {
-  try {
-    client = new MongoClient(process.env.MONGODB_URI);
-    await client.connect();
-    database = client.db(process.env.MONGODB_DB_NAME);
-    console.log("Connected to database");
-
-    return client;
-  } catch (err) {
-    console.error(err);
-  }
+try {
+  client = new MongoClient(process.env.MONGODB_URI);
+  await client.connect();
+  database = client.db(process.env.MONGODB_DB_NAME);
+  console.log("Connected to database");
+} catch (err) {
+  console.error(err);
+  process.exit(0);
 }
 
 async function doesCollectionExist(name) {
   try {
     const collections = await database.listCollections().toArray();
+
     return collections.some((collection) => collection.name === name);
   } catch (err) {
     console.error(err);
@@ -43,7 +40,18 @@ export async function updateCollection(name, data) {
     const insertResult = await collection.insertMany(data.quotes, {
       ordered: true,
     });
+
     console.log(`${insertResult.insertedCount} documents inserted`);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+export async function getAllCollections() {
+  try {
+    const collections = await database.getCollectionNames();
+
+    return collections;
   } catch (err) {
     console.error(err);
   }
@@ -77,7 +85,7 @@ export async function getQuoteByIndex(name, index) {
       return { error: `Id must be between 1 and ${count}.` };
     }
 
-    const quote = await collection.findOne({ id: Number(index) });
+    const quote = await collection.findOne({ _id: Number(index) });
 
     return quote;
   } catch (err) {
@@ -92,7 +100,7 @@ export async function getAllQuotes(name) {
     }
 
     const collection = database.collection(name);
-    const quotes = await collection.find().sort({ id: 1 }).toArray();
+    const quotes = await collection.find().sort({ _id: 1 }).toArray();
 
     return quotes;
   } catch (err) {
