@@ -1,199 +1,212 @@
 {
+  "name": "Villains",
+  "colors": [
+    "#0d0e14",
+    "#252933",
+    "#404556",
+    "#60515c",
+    "#777076",
+    "#597d7c",
+    "#386775",
+    "#20504e",
+    "#193d31",
+    "#17292b"
+  ],
   "quotes": [
     {
-      "id": 1,
-      "name": "Thanos",
-      "quote": "The hardest choices require the strongest wills."
+      "_id": 1,
+      "title": "Thanos",
+      "desc": "The hardest choices require the strongest wills."
     },
     {
-      "id": 2,
-      "name": "Joker",
-      "quote": "In their last moments, people show you who they really are."
+      "_id": 2,
+      "title": "Joker",
+      "desc": "In their last moments, people show you who they really are."
     },
     {
-      "id": 3,
-      "name": "Henri Ducard",
-      "quote": "You must become more than just a man in the mind of your opponent."
+      "_id": 3,
+      "title": "Henri Ducard",
+      "desc": "You must become more than just a man in the mind of your opponent."
     },
     {
-      "id": 4,
-      "name": "Erik Lehnsherr",
-      "quote": "Peace was never an option."
+      "_id": 4,
+      "title": "Erik Lehnsherr",
+      "desc": "Peace was never an option."
     },
     {
-      "id": 5,
-      "name": "Bane",
-      "quote": "No one cared who I was until I put on the mask."
+      "_id": 5,
+      "title": "Bane",
+      "desc": "No one cared who I was until I put on the mask."
     },
     {
-      "id": 6,
-      "name": "Erik Stevens",
-      "quote": "Bury me in the ocean with my ancestors who jumped from ships, because they knew death was better than bondage."
+      "_id": 6,
+      "title": "Erik Stevens",
+      "desc": "Bury me in the ocean with my ancestors who jumped from ships, because they knew death was better than bondage."
     },
     {
-      "id": 7,
-      "name": "Maul",
-      "quote": "Unfortunately for you, history will not see it that way."
+      "_id": 7,
+      "title": "Maul",
+      "desc": "Unfortunately for you, history will not see it that way."
     },
     {
-      "id": 8,
-      "name": "Norman Osborn",
-      "quote": "Despite everything you've done for them, eventually they will hate you."
+      "_id": 8,
+      "title": "Norman Osborn",
+      "desc": "Despite everything you've done for them, eventually they will hate you."
     },
     {
-      "id": 9,
-      "name": "Quentin Beck",
-      "quote": "People need to believe, and nowadays, they'll believe anything."
+      "_id": 9,
+      "title": "Quentin Beck",
+      "desc": "People need to believe, and nowadays, they'll believe anything."
     },
     {
-      "id": 10,
-      "name": "Kaecilius",
-      "quote": "People think in terms of good and evil when really, time is the true enemy of us all."
+      "_id": 10,
+      "title": "Kaecilius",
+      "desc": "People think in terms of good and evil when really, time is the true enemy of us all."
     },
     {
-      "id": 11,
-      "name": "Ultron",
-      "quote": "Everyone creates the thing they dread."
+      "_id": 11,
+      "title": "Ultron",
+      "desc": "Everyone creates the thing they dread."
     },
     {
-      "id": 12,
-      "name": "Wenwu",
-      "quote": "I have eaten more salt than you have had rice in your life."
+      "_id": 12,
+      "title": "Wenwu",
+      "desc": "I have eaten more salt than you have had rice in your life."
     },
     {
-      "id": 13,
-      "name": "Red Skull",
-      "quote": "You pretend to be a simple soldier, but in reality, you are just afraid to admit that we have left humanity behind."
+      "_id": 13,
+      "title": "Red Skull",
+      "desc": "You pretend to be a simple soldier, but in reality, you are just afraid to admit that we have left humanity behind."
     },
     {
-      "id": 14,
-      "name": "The Riddler",
-      "quote": "If you are justice, please do not lie / What is the price for your blind eye?"
+      "_id": 14,
+      "title": "The Riddler",
+      "desc": "If you are justice, please do not lie / What is the price for your blind eye?"
     },
     {
-      "id": 15,
-      "name": "Lockdown",
-      "quote": "The trouble with loyalty to a cause is that the cause will always betray you."
+      "_id": 15,
+      "title": "Lockdown",
+      "desc": "The trouble with loyalty to a cause is that the cause will always betray you."
     },
     {
-      "id": 16,
-      "name": "Harvey Dent",
-      "quote": "You either die a hero, or you live long enough to see yourself become the villain."
+      "_id": 16,
+      "title": "Harvey Dent",
+      "desc": "You either die a hero, or you live long enough to see yourself become the villain."
     },
     {
-      "id": 17,
-      "name": "Ben Solo",
-      "quote": "Let the past die. Kill it, if you have to."
+      "_id": 17,
+      "title": "Ben Solo",
+      "desc": "Let the past die. Kill it, if you have to."
     },
     {
-      "id": 18,
-      "name": "Helmut Zemo",
-      "quote": "The desire to become a superhuman cannot be separated from supremacist ideals."
+      "_id": 18,
+      "title": "Helmut Zemo",
+      "desc": "The desire to become a superhuman cannot be separated from supremacist ideals."
     },
     {
-      "id": 19,
-      "name": "Lex Luthor",
-      "quote": "If God is all-powerful, he cannot be all good. And if he is all good, then he cannot be all-powerful."
+      "_id": 19,
+      "title": "Lex Luthor",
+      "desc": "If God is all-powerful, he cannot be all good. And if he is all good, then he cannot be all-powerful."
     },
     {
-      "id": 20,
-      "name": "Negan Smith",
-      "quote": "If you don't protect what belongs to you, then sooner or later it belongs to someone else."
+      "_id": 20,
+      "title": "Negan Smith",
+      "desc": "If you don't protect what belongs to you, then sooner or later it belongs to someone else."
     },
     {
-      "id": 21,
-      "name": "Wilson Fisk",
-      "quote": "A woman that can be bought isn't worth having."
+      "_id": 21,
+      "title": "Wilson Fisk",
+      "desc": "A woman that can be bought isn't worth having."
     },
     {
-      "id": 22,
-      "name": "Petyr Baelish",
-      "quote": "A man with no motive is a man no one suspects. Always keep your foes confused."
+      "_id": 22,
+      "title": "Petyr Baelish",
+      "desc": "A man with no motive is a man no one suspects. Always keep your foes confused."
     },
     {
-      "id": 23,
-      "name": "Hannibal Lecter",
-      "quote": "Cruelty is a gift humanity has given itself."
+      "_id": 23,
+      "title": "Hannibal Lecter",
+      "desc": "Cruelty is a gift humanity has given itself."
     },
     {
-      "id": 24,
-      "name": "Gustavo Fring",
-      "quote": "A dog who bites every owner he's had can only be disciplined with a firm hand or put down."
+      "_id": 24,
+      "title": "Gustavo Fring",
+      "desc": "A dog who bites every owner he's had can only be disciplined with a firm hand or put down."
     },
     {
-      "id": 25,
-      "name": "Arthur Fleck",
-      "quote": "The worse part of having a mental illness is people expect you to behave as if you don't."
+      "_id": 25,
+      "title": "Arthur Fleck",
+      "desc": "The worse part of having a mental illness is people expect you to behave as if you don't."
     },
     {
-      "id": 26,
-      "name": "Tyler Durden",
-      "quote": "It's only after we've lost everything that we're free to do anything."
+      "_id": 26,
+      "title": "Tyler Durden",
+      "desc": "It's only after we've lost everything that we're free to do anything."
     },
     {
-      "id": 27,
-      "name": "Frank Castle",
-      "quote": "You know you're one bad day away from being me."
+      "_id": 27,
+      "title": "Frank Castle",
+      "desc": "You know you're one bad day away from being me."
     },
     {
-      "id": 28,
-      "name": "White Death",
-      "quote": "If you do not control your fate, it will control you."
+      "_id": 28,
+      "title": "White Death",
+      "desc": "If you do not control your fate, it will control you."
     },
     {
-      "id": 29,
-      "name": "Syndrome",
-      "quote": "When everyone's super, no one will be."
+      "_id": 29,
+      "title": "Syndrome",
+      "desc": "When everyone's super, no one will be."
     },
     {
-      "id": 30,
-      "name": "Ernesto de la Cruz",
-      "quote": "You have to be willing to do whatever it takes to seize your moment."
+      "_id": 30,
+      "title": "Ernesto de la Cruz",
+      "desc": "You have to be willing to do whatever it takes to seize your moment."
     },
     {
-      "id": 31,
-      "name": "Ivan Vanko",
-      "quote": "If you can make God bleed, people will cease to believe in him."
+      "_id": 31,
+      "title": "Ivan Vanko",
+      "desc": "If you can make God bleed, people will cease to believe in him."
     },
     {
-      "id": 32,
-      "name": "Flint Marko",
-      "quote": "I'm not a bad person. Just had bad luck."
+      "_id": 32,
+      "title": "Flint Marko",
+      "desc": "I'm not a bad person. Just had bad luck."
     },
     {
-      "id": 33,
-      "name": "Voldemort",
-      "quote": "There is no good and evil. There is only power, and those too weak to seek it."
+      "_id": 33,
+      "title": "Voldemort",
+      "desc": "There is no good and evil. There is only power, and those too weak to seek it."
     },
     {
-      "id": 34,
-      "name": "Otto Octavius",
-      "quote": "Intelligence is not a privilege, it's a gift. And you use it for the good of mankind."
+      "_id": 34,
+      "title": "Otto Octavius",
+      "desc": "Intelligence is not a privilege, it's a gift. And you use it for the good of mankind."
     },
     {
-      "id": 35,
-      "name": "Adrian Toomes",
-      "quote": "We build the roads and we fight all their wars and everything. They don't care about us."
+      "_id": 35,
+      "title": "Adrian Toomes",
+      "desc": "We build the roads and we fight all their wars and everything. They don't care about us."
     },
     {
-      "id": 36,
-      "name": "Kenny Ackerman",
-      "quote": "Everyone had to be drunk on something to keep pushing on. Everyone was a slave to something."
+      "_id": 36,
+      "title": "Kenny Ackerman",
+      "desc": "Everyone had to be drunk on something to keep pushing on. Everyone was a slave to something."
     },
     {
-      "id": 37,
-      "name": "Eren Yeager",
-      "quote": "You win, you live. You lose, you die. If you don't fight, you can't win."
+      "_id": 37,
+      "title": "Eren Yeager",
+      "desc": "You win, you live. You lose, you die. If you don't fight, you can't win."
     },
     {
-      "id": 38,
-      "name": "Thrawn",
-      "quote": "What was first just a dream has become a frightening reality for those who may oppose us."
+      "_id": 38,
+      "title": "Thrawn",
+      "desc": "What was first just a dream has become a frightening reality for those who may oppose us."
     },
     {
-      "id": 39,
-      "name": "Baylan Skoll",
-      "quote": "It is an unfortunate evil, but speaks to a greater truth. One must destroy in order to create."
+      "_id": 39,
+      "title": "Baylan Skoll",
+      "desc": "It is an unfortunate evil, but speaks to a greater truth. One must destroy in order to create."
     }
   ]
 }
