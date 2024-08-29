@@ -18,11 +18,37 @@ try {
   process.exit(0);
 }
 
+// Collections
+
 async function doesCollectionExist(name) {
   try {
     const collections = await database.listCollections().toArray();
 
     return collections.some((collection) => collection.name === name);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+export async function getCollection(name) {
+  try {
+    if (!(await doesCollectionExist(name))) {
+      return { error: `Collection '${name}' does not exist.` };
+    }
+
+    const collection = database.collection(name);
+
+    return collection;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+export async function getAllCollectionNames() {
+  try {
+    const collections = await database.getCollectionNames();
+
+    return collections;
   } catch (err) {
     console.error(err);
   }
@@ -47,15 +73,7 @@ export async function updateCollection(name, data) {
   }
 }
 
-export async function getAllCollections() {
-  try {
-    const collections = await database.getCollectionNames();
-
-    return collections;
-  } catch (err) {
-    console.error(err);
-  }
-}
+// Quotes
 
 export async function getRandomQuote(name) {
   try {
@@ -88,21 +106,6 @@ export async function getQuoteByIndex(name, index) {
     const quote = await collection.findOne({ _id: Number(index) });
 
     return quote;
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-export async function getAllQuotes(name) {
-  try {
-    if (!(await doesCollectionExist(name))) {
-      return { error: `Collection '${name}' does not exist.` };
-    }
-
-    const collection = database.collection(name);
-    const quotes = await collection.find().sort({ _id: 1 }).toArray();
-
-    return quotes;
   } catch (err) {
     console.error(err);
   }

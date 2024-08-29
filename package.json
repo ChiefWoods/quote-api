@@ -2,10 +2,10 @@
   "name": "quote-api",
   "version": "1.0.0",
   "description": "Quote API for [Random Quote Machine](https://github.com/ChiefWoods/random-quote-machine)",
-  "main": "routes.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node src/routes.js"
+    "start": "node src/server.js"
   },
   "author": "",
   "license": "ISC",
