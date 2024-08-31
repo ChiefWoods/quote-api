@@ -36,7 +36,7 @@ export async function getCollection(name) {
       return { error: `Collection '${name}' does not exist.` };
     }
 
-    const collection = database.collection(name);
+    const collection = database.collection(name).find().toArray();
 
     return collection;
   } catch (err) {
@@ -46,9 +46,15 @@ export async function getCollection(name) {
 
 export async function getAllCollectionNames() {
   try {
-    const collections = await database.getCollectionNames();
+    const collections = await database.listCollections().toArray();
 
-    return collections;
+    const names = collections.map(({ name, type }) => {
+      if (type === "collection") {
+        return name;
+      }
+    });
+
+    return names;
   } catch (err) {
     console.error(err);
   }

@@ -4,13 +4,13 @@ import {
   getAllCollectionNames,
   getCollection,
   updateCollection,
-} from "../database";
+} from "../database.js";
 
 const collectionRouter = Router();
 const upload = multer({ storage: multer.memoryStorage() });
 
 collectionRouter
-  // Retrieves a collection
+  // Get a collection
   .get("/:name", async (req, res) => {
     try {
       const { name } = req.params;
@@ -29,7 +29,7 @@ collectionRouter
       res.status(500).json({ error: "Failed to retrieve collection." });
     }
   })
-  // Retrieves all collection names
+  // Get all collection names
   .get("/", async (req, res) => {
     try {
       const collections = await getAllCollectionNames();

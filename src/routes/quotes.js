@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { getQuoteByIndex, getRandomQuote } from "../database";
+import { getQuoteByIndex, getRandomQuote } from "../database.js";
 
 const quoteRouter = Router();
 
 quoteRouter
-  // Retrieves a random quote from a collection
+  // Get a random quote from a collection
   .get("/:collection/random", async (req, res) => {
     try {
       const { collection } = req.params;
@@ -27,7 +27,7 @@ quoteRouter
       res.status(500).json({ error: "Failed to retrieve quote." });
     }
   })
-  // Retrieves a quote by id from a collection
+  // Get a quote by id from a collection
   .get("/:collection/:id", async (req, res) => {
     try {
       const { collection, id } = req.params;
