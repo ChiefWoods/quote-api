@@ -36,9 +36,10 @@ export async function getCollection(name) {
       return { error: `Collection '${name}' does not exist.` };
     }
 
-    const collection = database.collection(name).find().toArray();
+    const quotes = await database.collection(name).find().toArray();
+    const metadata = await getMetadata(name);
 
-    return collection;
+    return { fullName: metadata.fullName, quotes, colors: metadata.colors };
   } catch (err) {
     console.error(err);
   }
@@ -46,12 +47,10 @@ export async function getCollection(name) {
 
 export async function getAllCollectionNames() {
   try {
-    const collections = await database.listCollections().toArray();
+    const collections = await database.collection("metadata").find().toArray();
 
-    const names = collections.map(({ name, type }) => {
-      if (type === "collection") {
-        return name;
-      }
+    const names = collections.map(({ collection, fullName }) => {
+      return { name: collection, fullName };
     });
 
     return names;
@@ -69,9 +68,12 @@ export async function updateCollection(name, data) {
       console.log(`Collection ${name} dropped`);
     }
 
-    const insertResult = await collection.insertMany(data.quotes, {
-      ordered: true,
-    });
+    const insertResult = await collection.insertMany(
+      data.quotes || data.metadata,
+      {
+        ordered: true,
+      },
+    );
 
     console.log(`${insertResult.insertedCount} documents inserted`);
   } catch (err) {
@@ -112,6 +114,45 @@ export async function getQuoteByIndex(name, index) {
     const quote = await collection.findOne({ _id: Number(index) });
 
     return quote;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+export async function getQuotes(name) {
+  try {
+    if (!(await doesCollectionExist(name))) {
+      return { error: `Collection '${name}' does not exist.` };
+    }
+
+    const quotes = await database.collection(name).find().toArray();
+
+    return quotes;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+// Metadata
+
+export async function getMetadata(name) {
+  try {
+    const collection = await database.collection("metadata").find().toArray();
+
+    let metadata;
+
+    for (const col of collection) {
+      if (col.collection === name) {
+        metadata = col;
+        break;
+      }
+    }
+
+    if (!metadata) {
+      return { error: `Collection '${name}' does not exist.` };
+    }
+
+    return metadata;
   } catch (err) {
     console.error(err);
   }

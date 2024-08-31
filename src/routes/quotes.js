@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getQuoteByIndex, getRandomQuote } from "../database.js";
+import { getQuotes, getQuoteByIndex, getRandomQuote } from "../database.js";
 
 const quoteRouter = Router();
 
@@ -47,6 +47,25 @@ quoteRouter
       console.log(`Retrieved quote: ${quote._id}`);
 
       res.json(quote);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json({ error: "Failed to retrieve quote." });
+    }
+  })
+  // Get all quotes from a collection
+  .get("/:collection", async (req, res) => {
+    try {
+      const { collection } = req.params;
+
+      if (collection === ":collection") {
+        return res.status(400).json({ error: "Collection name is required." });
+      }
+
+      const quotes = await getQuotes(collection);
+
+      console.log(`Retrieved collection: ${collection}`);
+
+      res.json(quotes);
     } catch (err) {
       console.log(err);
       res.status(500).json({ error: "Failed to retrieve quote." });

@@ -1,0 +1,34 @@
+{
+  "name": "metadata",
+  "metadata": [
+    {
+      "_id": 1,
+      "collection": "villains",
+      "fullName": "Villains",
+      "colors": [
+        "#0d0e14",
+        "#252933",
+        "#404556",
+        "#60515c",
+        "#777076",
+        "#597d7c",
+        "#386775",
+        "#20504e",
+        "#193d31",
+        "#17292b"
+      ]
+    },
+    {
+      "_id": 2,
+      "collection": "48laws",
+      "fullName": "48 Laws of Power",
+      "colors": ["#c64911", "#180145", "#acb117"]
+    },
+    {
+      "_id": 3,
+      "collection": "33strategies",
+      "fullName": "33 Strategies of War",
+      "colors": ["#3c4d47", "#c31a1f"]
+    }
+  ]
+}

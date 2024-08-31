@@ -21,6 +21,10 @@ collectionRouter
 
       const collection = await getCollection(name);
 
+      if (collection.error) {
+        return res.status(404).json(collection);
+      }
+
       console.log(`Retrieved collection: ${name}`);
 
       res.json(collection);
@@ -42,7 +46,7 @@ collectionRouter
       res.status(500).json({ error: "Failed to retrieve collection names." });
     }
   })
-  // Updates a collection entirely, creates a new collection if it doesn't exist
+  // Updates a collection or metadata file entirely, creates a new collection if it doesn't exist
   .put("/", upload.single("collection"), async (req, res) => {
     try {
       const { name } = req.body;
@@ -76,16 +80,25 @@ collectionRouter
 
       const data = JSON.parse(req.file.buffer.toString());
 
-      if (!data.quotes) {
+      if (
+        (data.name !== "metadata" && !data.quotes) ||
+        (data.name === "metadata" && !data.metadata)
+      ) {
         return res.status(400).json({
-          error: "File must contain 'quotes' key with an array of quotes.",
+          error:
+            "Collection files must contain 'quotes' key with an array of quotes; metadata files must contain 'metadata' key with an array of metadata.",
         });
       }
 
-      console.log(`Updated collection: ${name}`);
-
       await updateCollection(name, data);
-      res.json({ success: `Collection '${name}' updated.` });
+
+      if (name !== "metadata") {
+        console.log(`Updated collection: ${name}`);
+        res.json({ success: `Collection '${name}' updated.` });
+      } else {
+        console.log(`Updated metadata`);
+        res.json({ success: "Metadata updated." });
+      }
     } catch (err) {
       console.log(err);
       res.status(500).json({ error: "Failed to update collection." });
