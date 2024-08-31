@@ -1,6 +1,6 @@
 # Quote API
 
-Quote API for [Random Quote Machine](https://github.com/ChiefWoods/random-quote-machine)
+Quote API for [Random Quote Machine](https://github.com/ChiefWoods/random-quote-machine).
 
 ## Usage
 
@@ -12,18 +12,77 @@ Base - `https://quote-api-u0ka.onrender.com`
 - 48laws
 - 33strategies
 
+## Collections
+
+### Get a Collection
+
+`GET /api/collections/:name`
+
+#### Response
+
+```
+{
+    "fullName": "Villains",
+    "quotes": [
+        {
+            "_id": 1,
+            "title": "Thanos",
+            "desc": "The hardest choices require the strongest wills."
+        },
+        {
+            "_id": 2,
+            "title": "Joker",
+            "desc": "In their last moments, people show you who they really are."
+        },
+        ...
+    ],
+    "colors": [
+        "#0d0e14",
+        "#252933",
+        ...
+    ]
+}
+```
+
+### Get all Collection Names
+
+`GET /api/collections`
+
+#### Response
+
+```
+[
+    {
+        "name": "villains",
+        "fullName": "Villains"
+    },
+    {
+        "name": "48laws",
+        "fullName": "48 Laws of Power"
+    },
+    ...
+]
+```
+
 ### Update Collection
 
-`PUT /api/quotes`
+`PUT /api/collections`
 
-Updates a collection if it exists, and creates one if it doesn't.
+Updates a collection or metadata file and creates one if it doesn't exist.
+
+#### Basic Authorization
+
+| Key      | Type   | Description             |
+| -------- | ------ | ----------------------- |
+| username | String | Used for Authentication |
+| password | String | Used for Authentication |
 
 #### Body Data
 
-| Key        | Type   | Description                                              |
-| ---------- | ------ | -------------------------------------------------------- |
-| name       | String | Name of collection                                       |
-| collection | File   | JSON file with a 'quotes' property of an array of quotes |
+| Key        | Type   | Description                                                                               |
+| ---------- | ------ | ----------------------------------------------------------------------------------------- |
+| name       | String | Name of collection                                                                        |
+| collection | File   | JSON file with either a 'quotes' or 'metadata' property of an array of quotes or metadata |
 
 #### Response
 
@@ -33,11 +92,11 @@ Updates a collection if it exists, and creates one if it doesn't.
 }
 ```
 
+## Quotes
+
 ### Get Random Quote
 
-`GET /api/quotes/:name/random`
-
-Gets a random quote.
+`GET /api/quotes/:collection/random`
 
 #### Response
 
@@ -51,25 +110,21 @@ Gets a random quote.
 
 ### Get Quote by Id
 
-`GET /api/quotes/:name/:id`
-
-Gets a quote by id.
+`GET /api/quotes/:collection/:id`
 
 #### Response
 
 ```
 {
-    "id": 1,
-    "name": "Thanos",
-    "quote": "The hardest choices require the strongest wills."
+    "_id": 3,
+    "title": "Henri Ducard",
+    "desc": "You must become more than just a man in the mind of your opponent."
 }
 ```
 
 ### Get All Quotes
 
-`GET /api/quotes/:name`
-
-Gets all quotes from a collection.
+`GET /api/quotes/:collection`
 
 #### Response
 
@@ -86,6 +141,7 @@ Gets all quotes from a collection.
         "quote": "In their last moments, people show you who they really are."
     },
     ...
+]
 ```
 
 ## Built With
@@ -141,8 +197,10 @@ npm install
 3. Set environment variables
 
 ```
-MONGODB_URI=<YOUR MONGODB_URI HERE>
-MONGODB_DB_NAME=<NAME OF DATABASE>
+MONGODB_URI=<MONGODB_URI CONNECTION STRING>
+MONGODB_DB_NAME=<MONGODB DATABASE NAME>
+AUTH_USERNAME=<USERNAME FOR AUTHENTICATING ACCESS>
+AUTH_PASSWORD=<PASSWORD FOR AUTHENTICATING ACCESS>
 ```
 
 4. Start Node.js server
