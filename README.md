@@ -11,6 +11,9 @@ Base - `https://quote-api-u0ka.onrender.com`
 - villains
 - 48laws
 - 33strategies
+- htwfaip
+- 12rules
+- beyondOrder
 
 ## Collections
 
@@ -150,25 +153,18 @@ Updates a collection or metadata file and creates one if it doesn't exist.
 
 - [![JavaScript](https://img.shields.io/badge/Javascript-383936?style=for-the-badge&logo=javascript)](https://js.org/index.html)
 
-### Frameworks, Packages and Runtime
+### Packages
 
 - [![Express](https://img.shields.io/badge/Express-black?style=for-the-badge&logo=express)](https://expressjs.com/)
 - [![dotenv](https://img.shields.io/badge/.Env-black?style=for-the-badge&logo=dotenv)](https://www.dotenv.org/)
+
+### Runtime
+
 - [![Node.js](https://img.shields.io/badge/Node.js-233056?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/en)
 
 ### Database
 
 - [![MongoDB](https://img.shields.io/badge/MongoDB-001e2b?style=for-the-badge&logo=mongodb)](https://www.mongodb.com/)
-
-### Linters and Formatters
-
-- [![ESLint](https://img.shields.io/badge/eslint-4b32c3?style=for-the-badge&logo=eslint)](https://eslint.org/)
-- [![Prettier](https://img.shields.io/badge/prettier-1a2b34?style=for-the-badge&logo=prettier)](https://prettier.io/)
-
-### Tools
-
-- [![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-2c2c32?style=for-the-badge&logo=visual-studio-code&logoColor=007ACC)](https://code.visualstudio.com/)
-- [![Postman](https://img.shields.io/badge/Postman-fff?style=for-the-badge&logo=postman)](https://www.postman.com/)
 
 ## Getting Started
 
@@ -203,7 +199,7 @@ AUTH_USERNAME=<USERNAME FOR AUTHENTICATING ACCESS>
 AUTH_PASSWORD=<PASSWORD FOR AUTHENTICATING ACCESS>
 ```
 
-4. Start Node.js server
+4. Start Node server
 
 ```
 npm run start

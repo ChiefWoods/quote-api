@@ -22,13 +22,48 @@
       "_id": 2,
       "collection": "48laws",
       "fullName": "48 Laws of Power",
-      "colors": ["#c64911", "#180145", "#acb117"]
+      "colors": [
+        "#c64911",
+        "#180145",
+        "#acb117"
+      ]
     },
     {
       "_id": 3,
       "collection": "33strategies",
       "fullName": "33 Strategies of War",
-      "colors": ["#3c4d47", "#c31a1f"]
+      "colors": [
+        "#3c4d47",
+        "#c31a1f"
+      ]
+    },
+    {
+      "_id": 4,
+      "collection": "htwfaip",
+      "fullName": "How to Win Friends and Influence People",
+      "colors": [
+        "#771747",
+        "#de8b4c",
+        "#009f8d"
+      ]
+    },
+    {
+      "_id": 5,
+      "collection": "12rules",
+      "fullName": "12 Rules for Life",
+      "colors": [
+        "#19241e",
+        "#c0895b"
+      ]
+    },
+    {
+      "_id": 6,
+      "collection": "beyondOrder",
+      "fullName": "Beyond Order",
+      "colors": [
+        "#262b27",
+        "#ad895e"
+      ]
     }
   ]
 }
