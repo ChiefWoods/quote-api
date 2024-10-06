@@ -25,6 +25,12 @@ collectionRouter
         return res.status(404).json(collection);
       }
 
+      if (collection.quotes) {
+        collection.quotes.sort((a, b) => a._id - b._id);
+      } else if (collection.metadata) {
+        collection.metadata.sort((a, b) => a._id - b._id);
+      }
+      
       console.log(`Retrieved collection: ${name}`);
 
       res.json(collection);

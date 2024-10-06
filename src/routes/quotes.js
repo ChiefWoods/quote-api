@@ -1,5 +1,9 @@
 import { Router } from "express";
-import { getQuotes, getQuoteByIndex, getRandomQuote } from "../database.js";
+import {
+  getQuotes,
+  getQuoteByIndex,
+  getRandomQuote
+} from "../database.js";
 
 const quoteRouter = Router();
 
