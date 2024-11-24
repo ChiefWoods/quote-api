@@ -2,8 +2,9 @@ import { Router } from "express";
 import {
   getQuotes,
   getQuoteByIndex,
-  getRandomQuote
+  getRandomQuote,
 } from "../database.js";
+import { logRequest } from "../utils.js";
 
 const quoteRouter = Router();
 
@@ -23,7 +24,7 @@ quoteRouter
         return res.status(404).json(quote);
       }
 
-      console.log(`Retrieved quote: ${quote._id}`);
+      logRequest(req.method, req.originalUrl);
 
       res.json(quote);
     } catch (err) {
@@ -48,7 +49,7 @@ quoteRouter
         return res.status(404).json(quote);
       }
 
-      console.log(`Retrieved quote: ${quote._id}`);
+      logRequest(req.method, req.originalUrl);
 
       res.json(quote);
     } catch (err) {
@@ -67,7 +68,7 @@ quoteRouter
 
       const quotes = await getQuotes(collection);
 
-      console.log(`Retrieved collection: ${collection}`);
+      logRequest(req.method, req.originalUrl);
 
       res.json(quotes);
     } catch (err) {

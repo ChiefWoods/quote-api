@@ -5,6 +5,7 @@ import {
   getCollection,
   updateCollection,
 } from "../database.js";
+import { logRequest } from "../utils.js";
 
 const collectionRouter = Router();
 const upload = multer({ storage: multer.memoryStorage() });
@@ -31,7 +32,7 @@ collectionRouter
         collection.metadata.sort((a, b) => a._id - b._id);
       }
       
-      console.log(`Retrieved collection: ${name}`);
+      logRequest(req.method, req.originalUrl);
 
       res.json(collection);
     } catch (err) {
@@ -44,7 +45,7 @@ collectionRouter
     try {
       const collections = await getAllCollectionNames();
 
-      console.log(`Retrieved ${collections.length} collection names`);
+      logRequest(req.method, req.originalUrl);
 
       res.json(collections);
     } catch (err) {
@@ -97,12 +98,11 @@ collectionRouter
       }
 
       await updateCollection(name, data);
+      logRequest(req.method, req.originalUrl);
 
       if (name !== "metadata") {
-        console.log(`Updated collection: ${name}`);
         res.json({ success: `Collection '${name}' updated.` });
       } else {
-        console.log(`Updated metadata`);
         res.json({ success: "Metadata updated." });
       }
     } catch (err) {
