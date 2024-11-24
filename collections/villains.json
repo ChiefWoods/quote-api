@@ -195,6 +195,21 @@
       "_id": 39,
       "title": "It is an unfortunate evil, but speaks to a greater truth. One must destroy in order to create.",
       "desc": "Baylan Skoll"
+    },
+    {
+      "_id": 40,
+      "title": "How you do anything is how you do everything.",
+      "desc": "Marquis De Grammont"
+    },
+    {
+      "_id": 41,
+      "title": "Corruption like yours must be eradicated.",
+      "desc": "Dooku"
+    },
+    {
+      "_id": 42,
+      "title": "They don't give out awards for dying in the projects.",
+      "desc": "Ozwald Cobb"
     }
   ]
 }
