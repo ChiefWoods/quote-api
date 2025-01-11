@@ -6,6 +6,8 @@ export default [
   js.configs.recommended,
   prettierConfig,
   {
+    files: ["**/*.{js,ts}"],
+    ignores: ["**/*.json", "dist"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
@@ -14,14 +16,6 @@ export default [
         ...globals.node,
       },
     },
-  },
-  {
-    files: ["**/*.js"],
-  },
-  {
-    ignores: ["**/*.json", "dist"],
-  },
-  {
     rules: {
       indent: [
         "warn",
