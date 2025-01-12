@@ -1,170 +1,138 @@
 {
   "name": "33 Strategies of War",
+  "colors": ["#3c4d47", "#c31a1f"],
   "quotes": [
     {
-      "_id": 1,
-      "title": "Declare War on Your Enemies: The Polarity Strategy",
-      "desc": "Life is endless battle and conflict, and you cannot fight effectively unless you can identify your enemies. Learn to smoke out your enemies, to spot them by the signs and patterns that reveal hostility. Then, once you have them in your sights, inwardly declare war. Your enemies can fill you with purpose and direction."
+      "main": "Declare War on Your Enemies: The Polarity Strategy",
+      "sub": "Life is endless battle and conflict, and you cannot fight effectively unless you can identify your enemies. Learn to smoke out your enemies, to spot them by the signs and patterns that reveal hostility. Then, once you have them in your sights, inwardly declare war. Your enemies can fill you with purpose and direction."
     },
     {
-      "_id": 2,
-      "title": "Do Not Fight the Last War: The Guerrilla-War-of-the-Mind Strategy",
-      "desc": "What most often weighs you down and brings you misery is the past. You must consciously wage war against the past and force yourself to react to the present moment. Be ruthless on yourself; do not repeat the same tired methods. Wage guerrilla war on your mind, allowing no static lines of defense - make everything fluid and mobile."
+      "main": "Do Not Fight the Last War: The Guerrilla-War-of-the-Mind Strategy",
+      "sub": "What most often weighs you down and brings you misery is the past. You must consciously wage war against the past and force yourself to react to the present moment. Be ruthless on yourself; do not repeat the same tired methods. Wage guerrilla war on your mind, allowing no static lines of defense - make everything fluid and mobile."
     },
     {
-      "_id": 3,
-      "title": "Amidst the Turmoil of Events, Do Not Lose Your Presence of Mind: The Counterbalance Strategy",
-      "desc": "In the heat of battle, the mind tends to lose its balance. It is vital to keep your presence of mind, maintaining your mental powers, whatever the circumstances. Make the mind tougher by exposing it to adversity. Learn to detach yourself from the chaos of the battlefield."
+      "main": "Amidst the Turmoil of Events, Do Not Lose Your Presence of Mind: The Counterbalance Strategy",
+      "sub": "In the heat of battle, the mind tends to lose its balance. It is vital to keep your presence of mind, maintaining your mental powers, whatever the circumstances. Make the mind tougher by exposing it to adversity. Learn to detach yourself from the chaos of the battlefield."
     },
     {
-      "_id": 4,
-      "title": "Create a Sense of Urgency and Desperation: The Death-Ground Strategy",
-      "desc": "You are your own worst enemy. You waste precious time dreaming of the future instead of engaging in the present. Cut your ties to the past; enter unknown territory. Place yourself on \"death ground\", where your back is against the wall and you have to fight like hell to get out alive."
+      "main": "Create a Sense of Urgency and Desperation: The Death-Ground Strategy",
+      "sub": "You are your own worst enemy. You waste precious time dreaming of the future instead of engaging in the present. Cut your ties to the past; enter unknown territory. Place yourself on \"death ground\", where your back is against the wall and you have to fight like hell to get out alive."
     },
     {
-      "_id": 5,
-      "title": "Avoid the Snares of Groupthink: The Command-and-Control Strategy",
-      "desc": "The problem in leading any group is that people inevitably have their own agendas. You have to create a chain of command in which they do not feel constrained by your influence yet follow your lead. Create a sense of participation, but do not fall into groupthink - the irrationality of collective decision making."
+      "main": "Avoid the Snares of Groupthink: The Command-and-Control Strategy",
+      "sub": "The problem in leading any group is that people inevitably have their own agendas. You have to create a chain of command in which they do not feel constrained by your influence yet follow your lead. Create a sense of participation, but do not fall into groupthink - the irrationality of collective decision making."
     },
     {
-      "_id": 6,
-      "title": "Segment Your Forces: The Controlled-Chaos Strategy",
-      "desc": "The critical elements in war are speed and adaptability - the ability to move and make decisions faster than the enemy. Break your forces into independent groups that can operate on their own. Make your forces elusive and unstoppable by infusing them with the spirit of the campaign, giving them a mission to accomplish, and then letting them run."
+      "main": "Segment Your Forces: The Controlled-Chaos Strategy",
+      "sub": "The critical elements in war are speed and adaptability - the ability to move and make decisions faster than the enemy. Break your forces into independent groups that can operate on their own. Make your forces elusive and unstoppable by infusing them with the spirit of the campaign, giving them a mission to accomplish, and then letting them run."
     },
     {
-      "_id": 7,
-      "title": "Transform Your War Into a Crusade: Morale Strategies",
-      "desc": "The secret to motivating people and maintaining their morale is to get them to think less about themselves and more about the group. Involve them in a cause, a crusade against a hated enemy. Make them see their survival as tied to the success of the army as a whole."
+      "main": "Transform Your War Into a Crusade: Morale Strategies",
+      "sub": "The secret to motivating people and maintaining their morale is to get them to think less about themselves and more about the group. Involve them in a cause, a crusade against a hated enemy. Make them see their survival as tied to the success of the army as a whole."
     },
     {
-      "_id": 8,
-      "title": "Pick Your Battles Carefully: The Perfect-Economy Strategy",
-      "desc": "We all have limitations - our energies and skills will take us only so far. You must know your limits and pick your battles carefully. Consider the hidden costs of a war: time lost, political goodwill squandered, an embittered enemy bent on revenge. Sometimes it is better to wait, to undermine your enemies covertly rather than hitting them straight on."
+      "main": "Pick Your Battles Carefully: The Perfect-Economy Strategy",
+      "sub": "We all have limitations - our energies and skills will take us only so far. You must know your limits and pick your battles carefully. Consider the hidden costs of a war: time lost, political goodwill squandered, an embittered enemy bent on revenge. Sometimes it is better to wait, to undermine your enemies covertly rather than hitting them straight on."
     },
     {
-      "_id": 9,
-      "title": "Turn the Tables: The Counterattack Strategy",
-      "desc": "Moving first - initiating the attack - will often put you at a disadvantage: You are exposing your strategy and limiting your options. Instead, discover the power of holding back and letting the other side move first, giving you the flexibility to counterattack from any angle. If your opponents are aggressive, bait them into a rash attack that will leave them in a weak position."
+      "main": "Turn the Tables: The Counterattack Strategy",
+      "sub": "Moving first - initiating the attack - will often put you at a disadvantage: You are exposing your strategy and limiting your options. Instead, discover the power of holding back and letting the other side move first, giving you the flexibility to counterattack from any angle. If your opponents are aggressive, bait them into a rash attack that will leave them in a weak position."
     },
     {
-      "_id": 10,
-      "title": "Create a Threatening Presence: Deterrence Strategies",
-      "desc": "The best way to fight off aggressors is to keep them from attacking you in the first place. Build up a reputation: You're a little crazy. Fighting you is not worth it. Uncertainty is sometimes better than overt threat: If your opponents are never sure what messing with you will cost, they will not want to find out."
+      "main": "Create a Threatening Presence: Deterrence Strategies",
+      "sub": "The best way to fight off aggressors is to keep them from attacking you in the first place. Build up a reputation: You're a little crazy. Fighting you is not worth it. Uncertainty is sometimes better than overt threat: If your opponents are never sure what messing with you will cost, they will not want to find out."
     },
     {
-      "_id": 11,
-      "title": "Trade Space for Time: The Nonengagement Strategy",
-      "desc": "Retreat in the face of a strong enemy is a sign not of weakness but of strength. By resisting the temptation to respond to an aggressor, you buy yourself valuable timetime to recover, to think, to gain perspective. Sometimes you can accomplish most by doing nothing."
+      "main": "Trade Space for Time: The Nonengagement Strategy",
+      "sub": "Retreat in the face of a strong enemy is a sign not of weakness but of strength. By resisting the temptation to respond to an aggressor, you buy yourself valuable timetime to recover, to think, to gain perspective. Sometimes you can accomplish most by doing nothing."
     },
     {
-      "_id": 12,
-      "title": "Lose Battles but Win the War: Grand Strategy",
-      "desc": "Grand strategy is the art of looking beyond the battle and calculating ahead. It requires that you focus on your ultimate goal and plot to reach it. Let others get caught up in the twists and turns of the battle, relishing their little victories. Grand strategy will bring you the ultimate reward: the last laugh."
+      "main": "Lose Battles but Win the War: Grand Strategy",
+      "sub": "Grand strategy is the art of looking beyond the battle and calculating ahead. It requires that you focus on your ultimate goal and plot to reach it. Let others get caught up in the twists and turns of the battle, relishing their little victories. Grand strategy will bring you the ultimate reward: the last laugh."
     },
     {
-      "_id": 13,
-      "title": "Know Your Enemy: The Intelligence Strategy",
-      "desc": "The target of your strategies should be less the army you face than the mind of the man or woman who runs it. If you understand how that mind works, you have the key to deceiving and controlling it. Train yourself to read people, picking up the signals they unconsciously send about their innermost thoughts and intentions."
+      "main": "Know Your Enemy: The Intelligence Strategy",
+      "sub": "The target of your strategies should be less the army you face than the mind of the man or woman who runs it. If you understand how that mind works, you have the key to deceiving and controlling it. Train yourself to read people, picking up the signals they unconsciously send about their innermost thoughts and intentions."
     },
     {
-      "_id": 14,
-      "title": "Overwhelm Resistance with Speed and Suddenness: The Blitzkrieg Strategy",
-      "desc": "In a world in which many people are indecisive and overly cautious, the use of speed will bring you untold power. Striking first, before your opponents have time to think or prepare, will make them emotional, unbalanced, and prone to error."
+      "main": "Overwhelm Resistance with Speed and Suddenness: The Blitzkrieg Strategy",
+      "sub": "In a world in which many people are indecisive and overly cautious, the use of speed will bring you untold power. Striking first, before your opponents have time to think or prepare, will make them emotional, unbalanced, and prone to error."
     },
     {
-      "_id": 15,
-      "title": "Control the Dynamic: Forcing Strategies",
-      "desc": "People are constantly struggling to control you. The only way to get the upper hand is to make your play for control more intelligent and insidious. Instead of trying to dominate the other side's every move, work to define the nature of the relationship itself. Maneuver to control your opponents minds, pushing their emotional buttons and compelling them to make mistakes."
+      "main": "Control the Dynamic: Forcing Strategies",
+      "sub": "People are constantly struggling to control you. The only way to get the upper hand is to make your play for control more intelligent and insidious. Instead of trying to dominate the other side's every move, work to define the nature of the relationship itself. Maneuver to control your opponents minds, pushing their emotional buttons and compelling them to make mistakes."
     },
     {
-      "_id": 16,
-      "title": "Hit Them Where It Hurts: The Center-of-Gravity Strategy",
-      "desc": "Everyone has a source of power on which he or she depends. When you look at your rivals, search below the surface for that source, the center of gravity that holds the entire structure together. Hitting them there will inflict disproportionate pain. Find what the other side most cherishes and protects - that is where you must strike."
+      "main": "Hit Them Where It Hurts: The Center-of-Gravity Strategy",
+      "sub": "Everyone has a source of power on which he or she depends. When you look at your rivals, search below the surface for that source, the center of gravity that holds the entire structure together. Hitting them there will inflict disproportionate pain. Find what the other side most cherishes and protects - that is where you must strike."
     },
     {
-      "_id": 17,
-      "title": "Defeat Them in Detail: The Divide-and-Conquer Strategy",
-      "desc": "Never be intimidated by your enemy's appearance. Instead, look at the parts that make up the whole. By separating the parts, sowing dissension and division, you can bring down even the most formidable foe. When you are facing troubles or enemies, turn a large problem into small, eminently defeatable parts."
+      "main": "Defeat Them in Detail: The Divide-and-Conquer Strategy",
+      "sub": "Never be intimidated by your enemy's appearance. Instead, look at the parts that make up the whole. By separating the parts, sowing dissension and division, you can bring down even the most formidable foe. When you are facing troubles or enemies, turn a large problem into small, eminently defeatable parts."
     },
     {
-      "_id": 18,
-      "title": "Expose and Attack Your Opponents Soft Flank: The Turning Strategy",
-      "desc": "When you attack people directly, you stiffen their resistance and make your task that much harder. There is a better way: Distract your opponents' attention to the front, then attack them from the side, where they least expect it. Bait people into going out on a limb, exposing their weakness, then rake them with fire from the side."
+      "main": "Expose and Attack Your Opponents Soft Flank: The Turning Strategy",
+      "sub": "When you attack people directly, you stiffen their resistance and make your task that much harder. There is a better way: Distract your opponents' attention to the front, then attack them from the side, where they least expect it. Bait people into going out on a limb, exposing their weakness, then rake them with fire from the side."
     },
     {
-      "_id": 19,
-      "title": "Envelop the Enemy: The Annihilation Strategy",
-      "desc": "People will use any kind of gap in your defenses to attack you. So offer no gaps. The secret is to envelop your opponents - create relentless pressure on them from all sides and close off their access to the outside world. As you sense their weakening resolve, crush their willpower by tightening the noose."
+      "main": "Envelop the Enemy: The Annihilation Strategy",
+      "sub": "People will use any kind of gap in your defenses to attack you. So offer no gaps. The secret is to envelop your opponents - create relentless pressure on them from all sides and close off their access to the outside world. As you sense their weakening resolve, crush their willpower by tightening the noose."
     },
     {
-      "_id": 20,
-      "title": "Maneuver Them into Weakness: The Ripening-for-the-Sickle Strategy",
-      "desc": "No matter how strong you are, fighting endless battles with people is exhausting, costly, and unimaginative. Wise strategists prefer the art of maneuver: Before the battle even begins, they find ways to put their opponents in positions of such weakness that victory is easy and quick. Create dilemmas: Devise maneuvers that give them a choice of ways to respond-all of them bad."
+      "main": "Maneuver Them into Weakness: The Ripening-for-the-Sickle Strategy",
+      "sub": "No matter how strong you are, fighting endless battles with people is exhausting, costly, and unimaginative. Wise strategists prefer the art of maneuver: Before the battle even begins, they find ways to put their opponents in positions of such weakness that victory is easy and quick. Create dilemmas: Devise maneuvers that give them a choice of ways to respond-all of them bad."
     },
     {
-      "_id": 21,
-      "title": "Negotiate While Advancing: The Diplomatic-War Strategy",
-      "desc": "Before and during negotiations, you must keep advancing, creating relentless pressure and compelling the other side to settle on your terms. The more you take, the more you can give back in meaningless concessions. Create a reputation for being tough and uncompromising, so that people are back on their heels before they even meet you."
+      "main": "Negotiate While Advancing: The Diplomatic-War Strategy",
+      "sub": "Before and during negotiations, you must keep advancing, creating relentless pressure and compelling the other side to settle on your terms. The more you take, the more you can give back in meaningless concessions. Create a reputation for being tough and uncompromising, so that people are back on their heels before they even meet you."
     },
     {
-      "_id": 22,
-      "title": "Know How to End Things: The Exit Strategy",
-      "desc": "You are judged in this world by how well you bring things to an end. A messy or incomplete conclusion can reverberate for years to come. The art of ending things well is knowing when to stop. The height of strategic wisdom is to avoid all conflicts and entanglements from which there are no realistic exits."
+      "main": "Know How to End Things: The Exit Strategy",
+      "sub": "You are judged in this world by how well you bring things to an end. A messy or incomplete conclusion can reverberate for years to come. The art of ending things well is knowing when to stop. The height of strategic wisdom is to avoid all conflicts and entanglements from which there are no realistic exits."
     },
     {
-      "_id": 23,
-      "title": "Weave a Seamless Blend of Fact and Fiction: Misperception Strategies",
-      "desc": "Since no creature can survive without the ability to see or sense what is going on around it, make it hard for your enemies to know what is going on around them, including what you are doing. Feed their expectations, manufacture a reality to match their desires, and they will fool themselves. Control people's perceptions of reality and you control them."
+      "main": "Weave a Seamless Blend of Fact and Fiction: Misperception Strategies",
+      "sub": "Since no creature can survive without the ability to see or sense what is going on around it, make it hard for your enemies to know what is going on around them, including what you are doing. Feed their expectations, manufacture a reality to match their desires, and they will fool themselves. Control people's perceptions of reality and you control them."
     },
     {
-      "_id": 24,
-      "title": "Take the Line of Least Expectation: The Ordinary-Extraordinary Strategy",
-      "desc": "People expect your behavior to conform to known patterns and conventions. Your task as a strategist is to upset their expectations. First do something ordinary and conventional to fix their image of you, then hit them with the extraordinary. The terror is greater for being so sudden. Sometimes the ordinary is extraordinary because it is unexpected."
+      "main": "Take the Line of Least Expectation: The Ordinary-Extraordinary Strategy",
+      "sub": "People expect your behavior to conform to known patterns and conventions. Your task as a strategist is to upset their expectations. First do something ordinary and conventional to fix their image of you, then hit them with the extraordinary. The terror is greater for being so sudden. Sometimes the ordinary is extraordinary because it is unexpected."
     },
     {
-      "_id": 25,
-      "title": "Occupy the Moral High Ground: The Righteous Strategy",
-      "desc": "In a political world, the cause you are fighting for must seem more just than the enemy's. By questioning your opponents' motives and making them appear evil, you can narrow their base of support and room to maneuver. When you yourself come under moral attack from a clever enemy, do not whine or get angry; fight fire with fire."
+      "main": "Occupy the Moral High Ground: The Righteous Strategy",
+      "sub": "In a political world, the cause you are fighting for must seem more just than the enemy's. By questioning your opponents' motives and making them appear evil, you can narrow their base of support and room to maneuver. When you yourself come under moral attack from a clever enemy, do not whine or get angry; fight fire with fire."
     },
     {
-      "_id": 26,
-      "title": "Deny Them Targets: The Strategy of the Void",
-      "desc": "The feeling of emptiness or void - silence, isolation, nonengagement with others - is for most people intolerable. Give your enemies no target to attack, be dangerous but elusive, then watch as they chase you into the void. Instead of frontal battles, deliver irritating but damaging side attacks and pinprick bites."
+      "main": "Deny Them Targets: The Strategy of the Void",
+      "sub": "The feeling of emptiness or void - silence, isolation, nonengagement with others - is for most people intolerable. Give your enemies no target to attack, be dangerous but elusive, then watch as they chase you into the void. Instead of frontal battles, deliver irritating but damaging side attacks and pinprick bites."
     },
     {
-      "_id": 27,
-      "title": "Seem To Work for the Interests of Others While Furthering Your Own: The Alliance Strategy",
-      "desc": "The best way to advance your cause with the minimum of effort and bloodshed is to create a constantly shifting network of alliances, getting others to compensate for your deficiencies, do your dirty work, fight your wars. At the same time, you must work to sow dissension in the alliances of others, weakening your enemies by isolating them."
+      "main": "Seem To Work for the Interests of Others While Furthering Your Own: The Alliance Strategy",
+      "sub": "The best way to advance your cause with the minimum of effort and bloodshed is to create a constantly shifting network of alliances, getting others to compensate for your deficiencies, do your dirty work, fight your wars. At the same time, you must work to sow dissension in the alliances of others, weakening your enemies by isolating them."
     },
     {
-      "_id": 28,
-      "title": "Give Your Rivals Enough Rope to Hang Themselves: The One-Upmanship Strategy",
-      "desc": "Life's greatest dangers often come not from external enemies but from our supposed colleagues and friends who pretend to work for the common cause while scheming to sabotage us. Work to instill doubts and insecurities in such rivals, getting them to think too much and act defensively. Make them hang themselves through their own self-destructive tendencies, leaving you blameless and clean."
+      "main": "Give Your Rivals Enough Rope to Hang Themselves: The One-Upmanship Strategy",
+      "sub": "Life's greatest dangers often come not from external enemies but from our supposed colleagues and friends who pretend to work for the common cause while scheming to sabotage us. Work to instill doubts and insecurities in such rivals, getting them to think too much and act defensively. Make them hang themselves through their own self-destructive tendencies, leaving you blameless and clean."
     },
     {
-      "_id": 29,
-      "title": "Take Small Bites: The Fait Accompli Strategy",
-      "desc": "Overt power grabs and sharp rises to the top are dangerous, creating envy, distrust, and suspicion. Often the best solution is to take small bites, swallow little territories, playing upon peoples relatively short attention spans. Before people realize it, you have accumulated an empire."
+      "main": "Take Small Bites: The Fait Accompli Strategy",
+      "sub": "Overt power grabs and sharp rises to the top are dangerous, creating envy, distrust, and suspicion. Often the best solution is to take small bites, swallow little territories, playing upon peoples relatively short attention spans. Before people realize it, you have accumulated an empire."
     },
     {
-      "_id": 30,
-      "title": "Penetrate Their Minds: Communication Strategies",
-      "desc": "Communication is a kind of war, its field of battle the resistant and defensive minds of the people you want to influence. The goal is to penetrate their defenses and occupy their minds. Learn to infiltrate your ideas behind enemy lines, sending messages through little details, luring people into coming to the conclusions you desire and into thinking they've gotten there by themselves."
+      "main": "Penetrate Their Minds: Communication Strategies",
+      "sub": "Communication is a kind of war, its field of battle the resistant and defensive minds of the people you want to influence. The goal is to penetrate their defenses and occupy their minds. Learn to infiltrate your ideas behind enemy lines, sending messages through little details, luring people into coming to the conclusions you desire and into thinking they've gotten there by themselves."
     },
     {
-      "_id": 31,
-      "title": "Destroy from Within: The Inner-Front Strategy",
-      "desc": "By infiltrating your opponents' ranks, working from within to bring them down, you give them nothing to see or react against - the ultimate advantage. To take something you want, do not fight those who have it, but rather join them - then either slowly make it your own or wait for the moment to stage a coup d'etat."
+      "main": "Destroy from Within: The Inner-Front Strategy",
+      "sub": "By infiltrating your opponents' ranks, working from within to bring them down, you give them nothing to see or react against - the ultimate advantage. To take something you want, do not fight those who have it, but rather join them - then either slowly make it your own or wait for the moment to stage a coup d'etat."
     },
     {
-      "_id": 32,
-      "title": "Dominate While Seeming to Submit: The Passive-Aggression Strategy",
-      "desc": "In a world where political considerations are paramount, the most effective form of aggression is the best hidden one: aggression behind a compliant, even loving exterior. To follow the passive-aggression strategy you must seem to go along with people, offering no resistance. But actually you dominate the situation. Just make sure you have disguised your aggression enough that you can deny it exists."
+      "main": "Dominate While Seeming to Submit: The Passive-Aggression Strategy",
+      "sub": "In a world where political considerations are paramount, the most effective form of aggression is the best hidden one: aggression behind a compliant, even loving exterior. To follow the passive-aggression strategy you must seem to go along with people, offering no resistance. But actually you dominate the situation. Just make sure you have disguised your aggression enough that you can deny it exists."
     },
     {
-      "_id": 33,
-      "title": "Sow Uncertainty and Panic Through Acts of Terror: The Chain-Reaction Strategy",
-      "desc": "Terror is the ultimate way to paralyze a people's will to resist and destroy their ability to plan a strategic response. The goal in a terror campaign is not battlefield victory but causing maximum chaos and provoking the other side into desperate overreaction. To plot the most effective counterstrategy, victims of terror must stay balanced. One's rationality is the last line of defense."
+      "main": "Sow Uncertainty and Panic Through Acts of Terror: The Chain-Reaction Strategy",
+      "sub": "Terror is the ultimate way to paralyze a people's will to resist and destroy their ability to plan a strategic response. The goal in a terror campaign is not battlefield victory but causing maximum chaos and provoking the other side into desperate overreaction. To plot the most effective counterstrategy, victims of terror must stay balanced. One's rationality is the last line of defense."
     }
   ]
 }

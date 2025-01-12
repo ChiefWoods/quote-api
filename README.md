@@ -4,205 +4,221 @@ Quote API for [Random Quote Machine](https://github.com/ChiefWoods/random-quote-
 
 ## Usage
 
-Base - `https://quote-api-u0ka.onrender.com`
+Base - `https://quote-api-u0ka.onrender.com/api`
 
 ### Available Collections
 
-- villains
-- 48laws
-- 33strategies
-- htwfaip
-- 12rules
-- beyondOrder
+- Villains
+- 48 Laws of Power
+- 33 Strategies of War
+- How to Win Friends and Influence People
+- 12 Rules for Life
+- Beyond Order
+
+## Auth
+
+Non-GET routes require basic auth.
+
+| Key      | Type   |
+| -------- | ------ |
+| username | string |
+| password | string |
+
+## Initialize Database
+
+`POST /init`
+
+#### Response
+
+```
+Database initialized.
+```
 
 ## Collections
 
-### Get a Collection
+### Get a collection and all quotes in it
 
-`GET /api/collections/:name`
+`GET /collections/:id`
 
 #### Response
 
 ```
 {
-    "fullName": "Villains",
-    "quotes": [
-        {
-            "_id": 1,
-            "title": "Thanos",
-            "desc": "The hardest choices require the strongest wills."
-        },
-        {
-            "_id": 2,
-            "title": "Joker",
-            "desc": "In their last moments, people show you who they really are."
-        },
-        ...
-    ],
-    "colors": [
-        "#0d0e14",
-        "#252933",
-        ...
-    ]
+  "id": 1,
+  "name": "Villains",
+  "colors": [
+    "#0d0e14",
+    "#252933",
+    "#404556",
+    ...
+  ],
+  "quotes": [
+    {
+      "id": 1,
+      "main": "The hardest choices require the strongest wills.",
+      "sub": "Thanos",
+      "collection_id": 1
+    },
+    ...
+  ]
 }
 ```
 
-### Get all Collection Names
+### Get all collection names
 
-`GET /api/collections`
+`GET /collections`
 
 #### Response
 
 ```
 [
-    {
-        "name": "villains",
-        "fullName": "Villains"
-    },
-    {
-        "name": "48laws",
-        "fullName": "48 Laws of Power"
-    },
-    ...
+  "12 Rules for Life",
+  "33 Strategies of War",
+  "48 Laws of Power",
+  ...
 ]
 ```
 
-### Update Collection
+### Add a new collection
 
-`PUT /api/collections`
+`POST /collections`
 
-Updates a collection or metadata file and creates one if it doesn't exist.
+#### Body
 
-#### Basic Authorization
-
-| Key      | Type   | Description             |
-| -------- | ------ | ----------------------- |
-| username | String | Used for Authentication |
-| password | String | Used for Authentication |
-
-#### Body Data
-
-| Key        | Type   | Description                                                                               |
-| ---------- | ------ | ----------------------------------------------------------------------------------------- |
-| name       | String | Name of collection                                                                        |
-| collection | File   | JSON file with either a 'quotes' or 'metadata' property of an array of quotes or metadata |
+| Key    | Type     | Description                |
+| ------ | -------- | -------------------------- |
+| name   | string   | Name of collection         |
+| colors | string[] | Color in RGB (eg: #771747) |
 
 #### Response
 
 ```
 {
-    "success": "Collection 'villains' updated."
+  "id": 1,
+  "name": "Villains",
+  "colors": [
+    "#0d0e14",
+    "#252933",
+    "#404556",
+    ...
+  ],
 }
+```
+
+### Add new quotes to a collection
+
+`PUT /collections`
+
+#### Multipart Form
+
+| Key    | Type   | Description                                                                                       |
+| ------ | ------ | ------------------------------------------------------------------------------------------------- |
+| id     | number | Collection id                                                                                     |
+| quotes | file   | JSON file with a 'quotes' field of an array of quotes, each with fields 'main' and optional 'sub' |
+
+#### Response
+
+```
+Collection '1' updated.
+```
+
+### Delete a collection
+
+`DELETE /collections:id`
+
+#### Response
+
+```
+Collection '1' deleted.
 ```
 
 ## Quotes
 
-### Get Random Quote
+### Get a quote
 
-`GET /api/quotes/:collection/random`
-
-#### Response
-
-```
-{
-    "id": 28,
-    "name": "White Death",
-    "quote": "If you do not control your fate, it will control you."
-}
-```
-
-### Get Quote by Id
-
-`GET /api/quotes/:collection/:id`
+`GET /quotes/:id`
 
 #### Response
 
 ```
 {
-    "_id": 3,
-    "title": "Henri Ducard",
-    "desc": "You must become more than just a man in the mind of your opponent."
+  "id": 1,
+  "main": "The hardest choices require the strongest wills.",
+  "sub": "Thanos",
+  "collection_id": 1
 }
 ```
 
-### Get All Quotes
+### Delete a quote
 
-`GET /api/quotes/:collection`
+`DELETE /quotes/:id`
 
 #### Response
 
 ```
-[
-    {
-        "id": 1,
-        "name": "Thanos",
-        "quote": "The hardest choices require the strongest wills."
-    },
-    {
-        "id": 2,
-        "name": "Joker",
-        "quote": "In their last moments, people show you who they really are."
-    },
-    ...
-]
+Quote '1' deleted.
 ```
 
 ## Built With
 
 ### Languages
 
-- [![JavaScript](https://img.shields.io/badge/Javascript-383936?style=for-the-badge&logo=javascript)](https://js.org/index.html)
+- [![TypeScript](https://img.shields.io/badge/TypeScript-white?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 
 ### Packages
 
 - [![Express](https://img.shields.io/badge/Express-black?style=for-the-badge&logo=express)](https://expressjs.com/)
-- [![dotenv](https://img.shields.io/badge/.Env-black?style=for-the-badge&logo=dotenv)](https://www.dotenv.org/)
 
 ### Runtime
 
-- [![Node.js](https://img.shields.io/badge/Node.js-233056?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/en)
+- [![Bun](https://img.shields.io/badge/Bun-000?style=for-the-badge&logo=bun)](https://bun.sh/)
 
 ### Database
 
-- [![MongoDB](https://img.shields.io/badge/MongoDB-001e2b?style=for-the-badge&logo=mongodb)](https://www.mongodb.com/)
+- [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-212121?style=for-the-badge&logo=postgresql)](https://www.postgresql.org/)
 
 ## Getting Started
 
 ### Prerequisites
 
-Update your npm package to the latest version.
+Update your Bun toolkit to the latest version.
 
-```
-npm install npm@latest -g
+```bash
+bun upgrade
 ```
 
 ### Setup
 
 1. Clone the repository
 
-```
+```bash
 git clone https://github.com/ChiefWoods/quote-api.git
 ```
 
 2. Install all dependencies
 
-```
-npm install
+```bash
+bun install
 ```
 
 3. Set environment variables
 
-```
-MONGODB_URI=<URI_CONNECTION_STRING>
-MONGODB_DB_NAME=<DATABASE_NAME>
-AUTH_USERNAME=<USERNAME_FOR_AUTHENTICATION>
-AUTH_PASSWORD=<PASSWORD_FOR_AUTHENTICATION>
+```bash
+DATABASE_URL=
+AUTH_USERNAME=
+AUTH_PASSWORD=
 ```
 
-4. Start Node server
+4. Start PostgreSQL
 
+```bash
+sudo systemctl start postgresql
 ```
-npm run start
+
+5. Start Express server
+
+```bash
+bun run dev
 ```
 
 ## Issues
@@ -218,6 +234,7 @@ View the [open issues](https://github.com/ChiefWoods/random-quote-machine/issues
 ### Hosting
 
 - [Render](https://render.com/)
+- [Supabase](https://supabase.com/)
 
 ## Contact
 

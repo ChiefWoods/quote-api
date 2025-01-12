@@ -1,53 +1,42 @@
 {
   "name": "12 Rules for Life",
+  "colors": ["#19241e", "#c0895b"],
   "quotes": [
     {
-      "_id": 1,
-      "title": "Stand up straight with your shoulders back."
+      "main": "Stand up straight with your shoulders back."
     },
     {
-      "_id": 2,
-      "title": "Treat yourself like someone you are responsible for helping."
+      "main": "Treat yourself like someone you are responsible for helping."
     },
     {
-      "_id": 3,
-      "title": "Make friends with people who want the best for you."
+      "main": "Make friends with people who want the best for you."
     },
     {
-      "_id": 4,
-      "title": "Compare yourself to who you were yesterday, not to who someone else is today."
+      "main": "Compare yourself to who you were yesterday, not to who someone else is today."
     },
     {
-      "_id": 5,
-      "title": "Do not let your children do anything that makes you dislike them."
+      "main": "Do not let your children do anything that makes you dislike them."
     },
     {
-      "_id": 6,
-      "title": "Set your house in perfect order before you criticize the world."
+      "main": "Set your house in perfect order before you criticize the world."
     },
     {
-      "_id": 7,
-      "title": "Pursue what is meaningful (not what is expedient)."
+      "main": "Pursue what is meaningful (not what is expedient)."
     },
     {
-      "_id": 8,
-      "title": "Tell the truth - or, at least, don't lie."
+      "main": "Tell the truth - or, at least, don't lie."
     },
     {
-      "_id": 9,
-      "title": "Assume that the person you are listening to might know something you don't."
+      "main": "Assume that the person you are listening to might know something you don't."
     },
     {
-      "_id": 10,
-      "title": "Be precise in your speech."
+      "main": "Be precise in your speech."
     },
     {
-      "_id": 11,
-      "title": "Do not bother children when they are skateboarding."
+      "main": "Do not bother children when they are skateboarding."
     },
     {
-      "_id": 12,
-      "title": "Pet a cat when you encounter one on the street."
+      "main": "Pet a cat when you encounter one on the street."
     }
   ]
 }

@@ -1,53 +1,42 @@
 {
   "name": "Beyond Order",
+  "colors": ["#262b27", "#ad895e"],
   "quotes": [
     {
-      "_id": 1,
-      "title": "Do not carelessly denigrate social institutions or creative achievement."
+      "main": "Do not carelessly denigrate social institutions or creative achievement."
     },
     {
-      "_id": 2,
-      "title": "Imagine who you could be, and then aim single-mindedly at that."
+      "main": "Imagine who you could be, and then aim single-mindedly at that."
     },
     {
-      "_id": 3,
-      "title": "Do not hide unwanted things in the fog."
+      "main": "Do not hide unwanted things in the fog."
     },
     {
-      "_id": 4,
-      "title": "Notice that opportunity lurks where responsibility has been abdicated."
+      "main": "Notice that opportunity lurks where responsibility has been abdicated."
     },
     {
-      "_id": 5,
-      "title": "Do not do what you hate."
+      "main": "Do not do what you hate."
     },
     {
-      "_id": 6,
-      "title": "Abandon ideology."
+      "main": "Abandon ideology."
     },
     {
-      "_id": 7,
-      "title": "Work as hard as you possibly can on at least one thing and see what happens."
+      "main": "Work as hard as you possibly can on at least one thing and see what happens."
     },
     {
-      "_id": 8,
-      "title": "Try to make one room in your home as beautiful as possible."
+      "main": "Try to make one room in your home as beautiful as possible."
     },
     {
-      "_id": 9,
-      "title": "If old memories still upset you, write them down carefully and completely."
+      "main": "If old memories still upset you, write them down carefully and completely."
     },
     {
-      "_id": 10,
-      "title": "Plan and work diligently to maintain the romance in your relationship."
+      "main": "Plan and work diligently to maintain the romance in your relationship."
     },
     {
-      "_id": 11,
-      "title": "Do not allow yourself to become resentful, deceitful, or arrogant."
+      "main": "Do not allow yourself to become resentful, deceitful, or arrogant."
     },
     {
-      "_id": 12,
-      "title": "Be grateful in spite of your suffering."
+      "main": "Be grateful in spite of your suffering."
     }
   ]
 }
