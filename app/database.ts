@@ -45,7 +45,12 @@ export async function getAllCollectionNames(): Promise<
     "SELECT id, name FROM collections ORDER BY name",
   );
 
-  return result.rows.map((row) => row.name);
+  return result.rows
+    .map(({ id, name }) => ({
+      id,
+      name,
+    }))
+    .sort((a, b) => a.id - b.id);
 }
 
 export async function getCollection(id: number): Promise<Collection> {
