@@ -7,26 +7,34 @@ const quotesRouter = Router();
 
 export default quotesRouter
   // Get a quote
-  .get("/:id", async (req, res) => {
+  .get("/:id", async (req, res, next) => {
     const { id } = req.params;
 
-    if (!id) {
-      throw new ApiError("Quote id is required.", 400);
+    try {
+      if (!id) {
+        throw new ApiError("Quote id is required.", 400);
+      }
+
+      const quote = await getQuote(Number(id));
+
+      res.json(quote);
+    } catch (err) {
+      next(err);
     }
-
-    const quote = await getQuote(Number(id));
-
-    res.json(quote);
   })
   // Delete a quote
-  .delete("/:id", basicAuth, async (req, res) => {
+  .delete("/:id", basicAuth, async (req, res, next) => {
     const { id } = req.params;
 
-    if (!id) {
-      throw new ApiError("Quote id is required.", 400);
+    try {
+      if (!id) {
+        throw new ApiError("Quote id is required.", 400);
+      }
+
+      await deleteQuote(Number(id));
+
+      res.json(`Quote '${id}' deleted.`);
+    } catch (err) {
+      next(err);
     }
-
-    await deleteQuote(Number(id));
-
-    res.json(`Quote '${id}' deleted.`);
   });
