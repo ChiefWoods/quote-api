@@ -37,30 +37,57 @@ export default collectionRouter
     }
   })
   // Add a new collection
-  .post("/", basicAuth, async (req, res, next) => {
-    const { name, colors } = req.body;
+  .post(
+    "/",
+    [basicAuth, upload.single("collection")],
+    async (req: Request, res: Response, next: NextFunction) => {
+      try {
+        if (!req.file) {
+          throw new ApiError("File is required.", 400);
+        }
 
-    try {
-      if (!name) {
-        throw new ApiError("Collection name is required.", 400);
-      } else if (
-        !colors ||
-        !Array.isArray(colors) ||
-        colors.some((c) => typeof c !== "string")
-      ) {
-        throw new ApiError(
-          "Collection colors must be an array of strings.",
-          400,
+        const { name, colors, quotes } = JSON.parse(req.file.buffer.toString());
+
+        if (!name) {
+          throw new ApiError("Collection name is required.", 400);
+        } else if (
+          !colors ||
+          !Array.isArray(colors) ||
+          colors.some((c) => typeof c !== "string")
+        ) {
+          throw new ApiError(
+            "Collection colors must be an array of strings.",
+            400,
+          );
+        } else if (!quotes || !Array.isArray(quotes)) {
+          throw new ApiError(
+            'Collection files must contain "quotes" key with an array of quotes.',
+            400,
+          );
+        }
+
+        const invalidQuotes = quotes.filter(
+          (quote) =>
+            !quote.main ||
+            typeof quote.main !== "string" ||
+            (quote.sub !== undefined && typeof quote.sub !== "string"),
         );
+
+        if (invalidQuotes.length) {
+          throw new ApiError(
+            'Each quote must have a "main" field as string and optional "sub" field as string.',
+            400,
+          );
+        }
+
+        const collection = await addCollection(name, colors, quotes);
+
+        res.json(collection);
+      } catch (err) {
+        next(err);
       }
-
-      const collection = await addCollection(name, colors);
-
-      res.json(collection);
-    } catch (err) {
-      next(err);
-    }
-  })
+    },
+  )
   // Add new quotes to a collection
   .put(
     "/",

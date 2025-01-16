@@ -83,12 +83,11 @@ Database initialized.
 
 `POST /collections`
 
-#### Body
+#### Multipart Form
 
-| Key    | Type     | Description                |
-| ------ | -------- | -------------------------- |
-| name   | string   | Name of collection         |
-| colors | string[] | Color in RGB (eg: #771747) |
+| Key        | Type | Description                                                                                                                                                            |
+| ---------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| collection | file | JSON file with fields 'name' of string, 'colors' of array of strings in RGB (eg: #771747), and 'quotes' of array of quotes, each with fields 'main' and optional 'sub' |
 
 #### Response
 
@@ -102,6 +101,15 @@ Database initialized.
     "#404556",
     ...
   ],
+  "quotes": [
+    {
+      "id": 1,
+      "main": "The hardest choices require the strongest wills.",
+      "sub": "Thanos",
+      "collection_id": 1
+    },
+    ...
+  ]
 }
 ```
 

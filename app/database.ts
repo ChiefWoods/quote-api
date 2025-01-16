@@ -29,13 +29,26 @@ export async function initializeDatabase(): Promise<void> {
 export async function addCollection(
   name: string,
   colors: string[],
+  quotes: Pick<Quote, "main" | "sub">[],
 ): Promise<Collection> {
-  const result = await pool.query(
+  const collectionResult = await pool.query(
     "INSERT INTO collections (name, colors) VALUES ($1, $2) RETURNING *",
     [name, colors],
   );
 
-  return result.rows[0];
+  const quoteResult = await pool.query(
+    "INSERT INTO quotes (main, sub, collection_id) SELECT unnest($1::text[]), unnest($2::text[]), $3 RETURNING *",
+    [
+      quotes.map((q) => q.main),
+      quotes.map((q) => q.sub || null),
+      collectionResult.rows[0].id,
+    ],
+  );
+
+  return {
+    ...collectionResult.rows[0],
+    quotes: quoteResult.rows,
+  };
 }
 
 export async function getAllCollectionNames(): Promise<
