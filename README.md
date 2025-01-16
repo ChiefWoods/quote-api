@@ -113,21 +113,30 @@ Database initialized.
 }
 ```
 
-### Add new quotes to a collection
+### Update a collection
 
-`PUT /collections`
+`PUT /collections/:id`
 
-#### Multipart Form
+#### Body
 
-| Key    | Type   | Description                                                                                       |
-| ------ | ------ | ------------------------------------------------------------------------------------------------- |
-| id     | number | Collection id                                                                                     |
-| quotes | file   | JSON file with a 'quotes' field of an array of quotes, each with fields 'main' and optional 'sub' |
+| Key    | Type     | Description                           |
+| ------ | -------- | ------------------------------------- |
+| name   | string   | Collection name                       |
+| colors | string[] | Array of strings in RGB (eg: #771747) |
 
 #### Response
 
 ```
-Collection '1' updated.
+{
+  "id": 1,
+  "name": "Villains",
+  "colors": [
+    "#0d0e14",
+    "#252933",
+    "#404556",
+    ...
+  ]
+}
 ```
 
 ### Delete a collection

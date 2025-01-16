@@ -89,19 +89,33 @@ export async function getCollection(id: number): Promise<Collection> {
 
 export async function updateCollection(
   collectionId: number,
-  quotes: Omit<Quote, "id" | "collection_id">[],
+  collection: Pick<Collection, "name" | "colors">,
 ): Promise<Quote[]> {
-  if (!quotes.length) {
-    throw new ApiError("At least one quote is required.", 400);
+  if (collection.name == undefined && collection.colors === undefined) {
+    throw new ApiError("At least 'name' or 'colors' is required.", 400);
   }
 
-  const mains = quotes.map((q) => q.main);
-  const subs = quotes.map((q) => q.sub || null);
-  const collectionIds = Array(quotes.length).fill(collectionId);
+  const updates: string[] = [];
+  const values: (string | string[] | number)[] = [];
+  let paramCount = 1;
+
+  if (collection.name !== undefined) {
+    updates.push(`name = $${paramCount}`);
+    values.push(collection.name);
+    paramCount++;
+  }
+
+  if (collection.colors !== undefined) {
+    updates.push(`colors = $${paramCount}`);
+    values.push(collection.colors);
+    paramCount++;
+  }
+
+  values.push(collectionId);
 
   const result = await pool.query(
-    "INSERT INTO quotes (main, sub, collection_id) SELECT unnest($1::text[]), unnest($2::text[]), unnest($3::int[]) RETURNING *",
-    [mains, subs, collectionIds],
+    `UPDATE collections SET ${updates.join(", ")} WHERE id = $${paramCount} RETURNING *`,
+    values,
   );
 
   return result.rows[0];

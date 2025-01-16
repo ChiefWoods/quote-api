@@ -9,6 +9,7 @@ import {
 } from "../database";
 import { ApiError } from "../errors";
 import { basicAuth } from "../middleware";
+import { checkInvalidQuotes } from "../utils";
 
 const collectionRouter = Router();
 const upload = multer({ storage: multer.memoryStorage() });
@@ -66,19 +67,7 @@ export default collectionRouter
           );
         }
 
-        const invalidQuotes = quotes.filter(
-          (quote) =>
-            !quote.main ||
-            typeof quote.main !== "string" ||
-            (quote.sub !== undefined && typeof quote.sub !== "string"),
-        );
-
-        if (invalidQuotes.length) {
-          throw new ApiError(
-            'Each quote must have a "main" field as string and optional "sub" field as string.',
-            400,
-          );
-        }
+        checkInvalidQuotes(quotes);
 
         const collection = await addCollection(name, colors, quotes);
 
@@ -88,46 +77,24 @@ export default collectionRouter
       }
     },
   )
-  // Add new quotes to a collection
+  // Update a collection
   .put(
-    "/",
-    [basicAuth, upload.single("quotes")],
+    "/:id",
+    basicAuth,
     async (req: Request, res: Response, next: NextFunction) => {
-      const { id } = req.body;
+      const { id } = req.params;
+      const { name, colors } = req.body;
 
       try {
-        if (!req.file) {
-          throw new ApiError("File is required.", 400);
-        } else if (!id) {
+        if (!id) {
           throw new ApiError("Collection id is required.", 400);
+        } else if (!name && !colors) {
+          throw new ApiError("At least 'name' or 'colors' is required.", 400);
         }
 
-        const { quotes } = JSON.parse(req.file.buffer.toString());
+        const collection = await updateCollection(Number(id), { name, colors });
 
-        if (!quotes || !Array.isArray(quotes)) {
-          throw new ApiError(
-            'Collection files must contain "quotes" key with an array of quotes.',
-            400,
-          );
-        }
-
-        const invalidQuotes = quotes.filter(
-          (quote) =>
-            !quote.main ||
-            typeof quote.main !== "string" ||
-            (quote.sub !== undefined && typeof quote.sub !== "string"),
-        );
-
-        if (invalidQuotes.length) {
-          throw new ApiError(
-            'Each quote must have a "main" field as string and optional "sub" field as string.',
-            400,
-          );
-        }
-
-        await updateCollection(id, quotes);
-
-        res.json(`Collection '${id}' updated.`);
+        res.json(collection);
       } catch (err) {
         next(err);
       }
