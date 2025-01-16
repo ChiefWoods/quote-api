@@ -166,6 +166,31 @@ Collection '1' deleted.
 }
 ```
 
+### Add new quotes
+
+`POST /quotes/`
+
+#### Body
+
+| Key          | Type                               | Description   |
+| ------------ | ---------------------------------- | ------------- |
+| collectionId | number                             | Collection id |
+| quotes       | <{ main: string, sub?: string }>[] | New quotes    |
+
+#### Response
+
+```
+[
+  {
+    "id": 2,
+    "main": "In their last moments, people show you who they really are.",
+    "sub": "Joker",
+    "collection_id": 1
+  },
+  ...
+]
+```
+
 ### Delete a quote
 
 `DELETE /quotes/:id`

@@ -131,6 +131,18 @@ export async function getQuote(id: number): Promise<Quote> {
   return result.rows[0];
 }
 
+export async function addQuotes(
+  collectionId: number,
+  quotes: Pick<Quote, "main" | "sub">[],
+): Promise<Quote[]> {
+  const result = await pool.query(
+    "INSERT INTO quotes (main, sub, collection_id) SELECT unnest($1::text[]), unnest($2::text[]), $3 RETURNING *",
+    [quotes.map((q) => q.main), quotes.map((q) => q.sub || null), collectionId],
+  );
+
+  return result.rows;
+}
+
 export async function deleteQuote(id: number): Promise<void> {
   await pool.query("DELETE FROM quotes WHERE id = $1 RETURNING id", [id]);
 }

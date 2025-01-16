@@ -1,7 +1,8 @@
 import { Router } from "express";
 import { ApiError } from "../errors";
-import { deleteQuote, getQuote } from "../database";
+import { addQuotes, deleteQuote, getQuote } from "../database";
 import { basicAuth } from "../middleware";
+import { checkInvalidQuotes } from "../utils";
 
 const quotesRouter = Router();
 
@@ -18,6 +19,28 @@ export default quotesRouter
       const quote = await getQuote(Number(id));
 
       res.json(quote);
+    } catch (err) {
+      next(err);
+    }
+  })
+  // Add new quotes
+  .post("/", basicAuth, async (req, res, next) => {
+    const { collectionId, quotes } = req.body;
+
+    try {
+      if (!collectionId) {
+        throw new ApiError("Collection id is required.", 400);
+      } else if (!quotes) {
+        throw new ApiError("Quotes are required.", 400);
+      } else if (!Array.isArray(quotes)) {
+        throw new ApiError("Quotes must be an array.", 400);
+      }
+
+      checkInvalidQuotes(quotes);
+
+      const newQuotes = await addQuotes(Number(collectionId), quotes);
+
+      res.json(newQuotes);
     } catch (err) {
       next(err);
     }
