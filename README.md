@@ -246,15 +246,16 @@ bun install
 3. Set environment variables
 
 ```bash
-DATABASE_URL=
-AUTH_USERNAME=
-AUTH_PASSWORD=
+cp .env.example .env
 ```
 
 4. Start PostgreSQL
 
 ```bash
+# Linux
 sudo systemctl start postgresql
+# MacOS
+brew services restart postgresql
 ```
 
 5. Start Express server
