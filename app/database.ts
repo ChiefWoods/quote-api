@@ -72,7 +72,7 @@ export async function getCollection(id: number): Promise<Collection> {
     [id],
   );
 
-  if (!collectionResult.rows.length) {
+  if (collectionResult.rows.length === 0) {
     throw new ApiError(`Collection '${id}' does not exist.`, 404);
   }
 

@@ -9,7 +9,7 @@ export function checkInvalidQuotes(quotes: Pick<Quote, "main" | "sub">[]) {
       (quote.sub !== undefined && typeof quote.sub !== "string"),
   );
 
-  if (invalidQuotes.length) {
+  if (invalidQuotes.length > 0) {
     throw new ApiError(
       'Each quote must have a "main" field as string and optional "sub" field as string.',
       400,
