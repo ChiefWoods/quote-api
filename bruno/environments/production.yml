@@ -1,0 +1,4 @@
+name: production
+variables:
+  - name: BASE_URL
+    value: https://quote-api-production-da11.up.railway.app

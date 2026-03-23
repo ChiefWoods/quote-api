@@ -1,0 +1,21 @@
+info:
+  name: add collection
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{BASE_URL}}/api/collections"
+  body:
+    type: multipart-form
+    data:
+      - name: collection
+        type: file
+        value: []
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
