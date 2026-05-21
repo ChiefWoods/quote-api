@@ -274,11 +274,6 @@ View the [open issues](https://github.com/ChiefWoods/random-quote-machine/issues
 
 - [Shields.io](https://shields.io/)
 
-### Hosting
-
-- [Render](https://render.com/)
-- [Supabase](https://supabase.com/)
-
 ## Contact
 
 [chii.yuen@hotmail.com](mailto:chii.yuen@hotmail.com)
